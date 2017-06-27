@@ -32,8 +32,8 @@
 \setlength{\textwidth}{6.5in}
 \setlength{\topmargin}{0in}
 %\setlength{\topskip}{0in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
 \setlength{\textheight}{9.1in}
 %\pagestyle{empty}
 
