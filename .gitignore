@@ -15,6 +15,9 @@
 *.sbx
 *.sxd
 *.todo
+*.class
+build/out/*
+
 main.tex
 main.sxc
 

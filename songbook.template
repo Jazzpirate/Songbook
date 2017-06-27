@@ -54,6 +54,17 @@
 }
 \newcommand{\newsong}[1]{\addcontentsline{toc}{section}{#1}\beginsong{#1}}
 
+%%INDEX%%
 
-%-----------------------------BANDS-----------------------------------------------
-%%INSERT%%
+\begin{document}
+\title{Absolem's Treasure Chest\\~\\ \includegraphics[width=\textwidth]{logo}}
+\maketitle
+
+\begin{multicols}{2}\tableofcontents\end{multicols}
+\songcolumns{2}
+\stepcounter{chapter}
+\newpage
+
+%%BANDS%%
+
+\end{document}
