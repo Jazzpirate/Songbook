@@ -54,8 +54,6 @@
 }
 \newcommand{\newsong}[1]{\addcontentsline{toc}{section}{#1}\beginsong{#1}}
 
-%%INDEX%%
-
 \begin{document}
 \title{Absolem's Treasure Chest\\~\\ \includegraphics[width=\textwidth]{logo}}
 \maketitle

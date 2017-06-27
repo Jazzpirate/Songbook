@@ -16,12 +16,10 @@ object Build {
     ShellCommand.run("touch", "main.tex")
     val (main,build) = ((File(".") / "main").addExtension("tex"),(File(".") / "build").addExtension("sh"))
 
-    File.write(main,tf.replace("%%INDEX%%",
-        bands.map(b => "\\newindex{" + b.id + "}{bands/" + b.id + "}").mkString("\n")
-    ).replace("%%BANDS%%",
+    File.write(main,tf.replace("%%BANDS%%",
         bands.map(b => "\\band{" + b.name + "}{" + b.id + "}").mkString("\n")
     ))
-    
+
     run("pdflatex","main")
     run("texlua","songidx.lua","cbmain.sxd", "cbmain.sbx")
     run("texlua","songidx.lua","cbbands.sxd","cbbands.sbx")
