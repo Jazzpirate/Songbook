@@ -1,7 +1,7 @@
 # Absolem's Treasure Chest
 
 This is a modular songbook using latex's songs-package with a simple java-script to generate the index, chapters etc. automatically. 
-It's contents are automatically assembled from individual .tex files in the `bands`-folder.
+Its contents are automatically assembled from individual .tex files in the `bands`-folder.
 
 ### Usage
 - For every band, create a new file `<bandid>.tex` in the `bands`-folder. This file should contain the individual songs 
