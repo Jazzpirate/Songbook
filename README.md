@@ -14,5 +14,5 @@ Its contents are automatically assembled from individual .tex files in the `band
   Details on the syntax can be found in the [official documentation](http://songs.sourceforge.net/) of the package.
   Note, that the songs will appar in the final document in the same order as they are in the artists `.tex`-file.
 - Having done so, simply run the `build.jar` (usually via `java -jar build.jar`), which should take care of all the rest for you
-  by assembling the individual band files into one `main.tex` with an appropriate table of contents etc. In case of
-  errors, you can manually compile the `main.tex` to get proper error messages.
+  by assembling the individual band files into one `main.tex` and compiling it to a `pdf` with table of contents etc. directly. 
+  In case there are problems, you can manually compile the `main.tex` to get proper error messages.
