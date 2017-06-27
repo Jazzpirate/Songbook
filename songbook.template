@@ -38,6 +38,7 @@
 \pagestyle{empty}
 
 \newcommand{\band}[2] {\songsection{#1}\begin{songs}{mainidx,#2}\input{bands/#2}\end{songs}}
+\newcommand{\tab}[1] {\includegraphics[width=0.47\textwidth]{tabs/#1}}
 
 \newindex{mainidx}{cbmain}
 \newauthorindex{bandsidx}{cbbands}
