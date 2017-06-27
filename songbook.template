@@ -23,7 +23,7 @@
 \usepackage[chorded]{songs}
 %\includeonlysongs{2}
 
-\usepackage{framed}
+\usepackage{framed,multicol}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 
@@ -37,11 +37,10 @@
 \setlength{\textheight}{9.1in}
 \pagestyle{empty}
 
-\newcommand{\band}[2] {\songsection{#1}\begin{songs}{mainidx,#2}\input{bands/#2}\end{songs}}
+\newcommand{\band}[2] {\addcontentsline{toc}{section}{#1}\songsection*{#1}\begin{songs}{}\input{bands/#2}\end{songs}}
 \newcommand{\tab}[1] {\includegraphics[width=0.47\textwidth]{tabs/#1}}
+\newcommand{\newsong}[1] {\addcontentsline{toc}{subsection}{#1}\beginsong{#1}}
 
-\newindex{mainidx}{cbmain}
-\newauthorindex{bandsidx}{cbbands}
 
-%-----------------------------BANDS---------------------------------------------------------------------------------
+%-----------------------------BANDS-----------------------------------------------
 %%INSERT%%
