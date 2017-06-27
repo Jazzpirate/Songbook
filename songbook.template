@@ -21,6 +21,7 @@
 \documentclass[8pt]{scrbook}
 \usepackage[bookmarks]{hyperref}
 \usepackage[chorded]{songs}
+\usepackage[utf8]{inputenc}
 %\includeonlysongs{2}
 
 \usepackage{framed,multicol,pbox,xifthen}
