@@ -20,3 +20,7 @@ Its contents are automatically assembled from individual .tex files in the `band
 
 ### Additional Features
 - The macro `\tab{<filename>}` will insert an image (intended to be guitar tabs) with the ideal width. The image should be in the `tabs`-folder.
+
+
+
+Some entries taken from [the Patacrep Songbook](http://www.patacrep.com/en/static1/downloads)
