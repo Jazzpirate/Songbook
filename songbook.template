@@ -24,8 +24,9 @@
 \usepackage[utf8]{inputenc}
 %\includeonlysongs{2}
 
-\usepackage{framed,multicol,pbox,xifthen}
-\usepackage{graphicx}
+\usepackage{framed,multicol,pbox,xifthen,color}
+\usepackage[show]{ed}
+\usepackage{graphicx,xifthen}
 \usepackage{fancyhdr}
 
 \setlength{\oddsidemargin}{0in}
@@ -37,6 +38,20 @@
 %\setlength{\headsep}{0in}
 \setlength{\textheight}{9.1in}
 %\pagestyle{empty}
+
+%------------------------------ SHOW TODOS -------------
+\newboolean{show}
+\setboolean{show}{false}
+%-------------------------------------------------------
+
+\newcommand{\songtodo}[1]{
+	\ifthenelse{\boolean{show}}{
+	\addcontentsline{toc}{section}{\textcolor{red}{TODO: }#1\ednote{#1}}	
+	\beginsong{#1}
+	\endsong
+	\begin{intersong}\textcolor{red}{TODO}\end{intersong}
+	}{}
+}
 
 \newcommand{\band}[2] {
 	\addcontentsline{toc}{chapter}{#1}
