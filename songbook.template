@@ -41,12 +41,12 @@
 
 %------------------------------ SHOW TODOS -------------
 \newboolean{show}
-\setboolean{show}{false}
+\setboolean{show}{true}
 %-------------------------------------------------------
 
 \newcommand{\songtodo}[1]{
 	\ifthenelse{\boolean{show}}{
-	\addcontentsline{toc}{section}{\textcolor{red}{TODO: }#1\ednote{#1}}	
+	\addcontentsline{toc}{section}{\textcolor{red}{TODO: }#1}	
 	\beginsong{#1}
 	\endsong
 	\begin{intersong}\textcolor{red}{TODO}\end{intersong}

@@ -20,6 +20,7 @@ Its contents are automatically assembled from individual .tex files in the `band
 
 ### Additional Features
 - The macro `\tab{<filename>}` will insert an image (intended to be guitar tabs) with the ideal width. The image should be in the `tabs`-folder.
+- The macro `\todosong{<Name>}` will insert a TODO both in the body of the document as well as the TOC if turned on, and will be ignored if turned off. Whether TODOs are shown is toggled in the boolean flag `\setboolean{show}{<value>}` in `songbook.template`.
 
 
 
