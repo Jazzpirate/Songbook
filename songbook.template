@@ -27,7 +27,6 @@
 \usepackage{framed,multicol,pbox,xifthen,color}
 \usepackage[show]{ed}
 \usepackage{graphicx,xifthen}
-\usepackage{fancyhdr}
 
 \setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
