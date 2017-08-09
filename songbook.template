@@ -98,7 +98,7 @@
 }
 
 \newcommand{\mobile}{
-	\usepackage[paper size={90mm, 12cm}, left=2mm, right=2mm, top=2mm, bottom=2mm]{geometry}
+	\usepackage[paper size={90mm, 15cm}, left=2mm, right=2mm, top=2mm, bottom=2mm]{geometry}
 
 	\setlength{\tabwidth}{\textwidth}
 
@@ -114,7 +114,7 @@
 
 
 %----------------------------- Some options ---------------------------
-\setboolean{show}{false}
+\setboolean{show}{true}
 \book
 %-------------------------------------------------------------------------
 \stepcounter{chapter}
