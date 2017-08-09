@@ -5,7 +5,18 @@ import Songbook.utils._
 object Build {
   case class Band(file : File) {
     val id = file.stripExtension.name
-    val name = File.read(file).split("\n").head.drop(1).trim
+
+    private val headline = File.read(file).split("\n").headOption match {
+      case Some(s) if s.trim.startsWith("%") => s.trim.drop(1).trim
+    }
+
+    val (name, todo) =
+      if (headline.startsWith("%"))
+        (headline.drop(1).trim, true)
+      else (headline, false)
+
+    def latex = if (todo) "\\todoband{" + name + "}{" + id + "}" else "\\band{" + name + "}{" + id + "}"
+
   }
   def main(args: Array[String]): Unit = {
     def run(s : String*) = ShellCommand.runIn(File("."),s:_*)
@@ -17,7 +28,7 @@ object Build {
     val (main,build) = ((File(".") / "main").addExtension("tex"),(File(".") / "build").addExtension("sh"))
 
     File.write(main,tf.replace("%%BANDS%%",
-        bands.map(b => "\\band{" + b.name + "}{" + b.id + "}").mkString("\n")
+        bands.map(_.latex).mkString("\n")
     ))
 
     run("pdflatex","main")

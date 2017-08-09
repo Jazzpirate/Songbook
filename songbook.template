@@ -28,21 +28,11 @@
 \usepackage[show]{ed}
 \usepackage{graphicx,xifthen}
 
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{0in}
-%\setlength{\topskip}{0in}
-%\setlength{\headheight}{0in}
-%\setlength{\headsep}{0in}
-\setlength{\textheight}{9.1in}
-%\pagestyle{empty}
 
 %------------------------------ SHOW TODOS -------------
 
 \newboolean{show}
-\setboolean{show}{true}
-
+\newlength{\tabwidth}
 %------------------------------ DEFINITIONS ------------
 
 \newcommand{\songtodo}[1]{
@@ -66,21 +56,67 @@
 		\input{bands/#2}
 	\end{songs}
 }
-\newcommand{\tab}[2][0.5] {
-	\pbox{0.5\textwidth}{\hspace{-0.55cm}
-		\centering\includegraphics[width=#1\textwidth]{tabs/#2}}
+\newcommand{\todoband}[2] {
+\ifthenelse{\boolean{show}}{
+\addcontentsline{toc}{chapter}{\textcolor{red}{#1}}
+	\renewcommand{\chaptername}{#1}
+	\chaptermark{#1}
+	\stepcounter{chapter}
+	\songsection*{#1}
+	\begin{songs}{}
+		\input{bands/#2}
+	\end{songs}
+}{}
+}
+
+\newcommand{\tab}[2][1] {
+	\pbox{#1\tabwidth}{\hspace{-0.55cm}
+		\centering\includegraphics[width=#1\tabwidth]{tabs/#2}}
 }
 
 \newcommand{\newsong}[1]{\addcontentsline{toc}{section}{#1}\beginsong{#1}}
 
+\newcommand{\book}{
+	\setlength{\oddsidemargin}{0in}
+	\setlength{\evensidemargin}{0in}
+	\setlength{\textwidth}{6.5in}
+	\setlength{\topmargin}{0in}
+	%\setlength{\topskip}{0in}
+	%\setlength{\headheight}{0in}
+	%\setlength{\headsep}{0in}
+	\setlength{\textheight}{9.1in}
+	%\pagestyle{empty}
+	\setlength{\tabwidth}{0.5\textwidth}
+	
+	\begin{document}
+	\title{Absolem's Treasure Chest\\~\\ \includegraphics[width=\textwidth]{logo}}
+	\maketitle
+	\begin{multicols}{2}
+		\tableofcontents
+	\end{multicols}
+	\songcolumns{2}
+}
+
+\newcommand{\mobile}{
+	\usepackage[paper size={90mm, 12cm}, left=2mm, right=2mm, top=2mm, bottom=2mm]{geometry}
+
+	\setlength{\tabwidth}{\textwidth}
+
+	
+	\begin{document}
+	\title{Absolem's Treasure Chest\\~\\ \includegraphics[width=\textwidth]{logo}}
+	\maketitle
+	\tableofcontents
+	\songcolumns{1}
+}
+
 %------------------------------- BEGIN DOCUMENT -------------
 
-\begin{document}
-\title{Absolem's Treasure Chest\\~\\ \includegraphics[width=\textwidth]{logo}}
-\maketitle
 
-\begin{multicols}{2}\tableofcontents\end{multicols}
-\songcolumns{2}
+%----------------------------- Some options ---------------------------
+\setboolean{show}{false}
+\book
+%-------------------------------------------------------------------------
 \stepcounter{chapter}
 \newpage
 
