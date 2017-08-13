@@ -114,8 +114,8 @@
 
 
 %----------------------------- Some options ---------------------------
-\setboolean{show}{true}
-\book
+\setboolean{show}{false}
+%%VERSION%%
 %-------------------------------------------------------------------------
 \stepcounter{chapter}
 \newpage
