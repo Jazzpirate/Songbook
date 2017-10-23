@@ -11,11 +11,11 @@ Its contents are automatically assembled from individual .tex files in the `band
   `wilson_steven.tex` would have as first line `% Steven Wilson`. This is the name that will actually appear 
   in the final document.
 - Add the individual songs to the artist's file using the syntax provided by the songs package. With the small exception that
-  you should use the command `\newsong{<title>}` to start a new song to add it to the table of contents
+  you should use the command `\newsong{<title>}` to start a new song to add it to the table of contents (the handling of indices in the songs packages is... not well suited for artist-song-subordering).
   Details on the syntax can be found in the [official documentation](http://songs.sourceforge.net/) of the package.
   Note, that the songs will appar in the final document in the same order as they are in the artists `.tex`-file.
 - Having done so, simply run the `build.jar` (usually via `java -jar build.jar`), which should take care of all the rest for you
-  by assembling the individual band files into one `main.tex` and compiling it to a `pdf` with table of contents etc. directly. 
+  by assembling the individual band files into one `main.tex` and compiling it to two `pdf` files (`main.pdf` and `mobile.pdf`, which is optimized for phone screens - well, mine, to be precise) with table of contents etc. directly. 
   In case there are problems, you can manually compile the `main.tex` to get proper error messages.
 
 ### Additional Features
